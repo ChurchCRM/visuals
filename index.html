@@ -3,25 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ChurchCRM visuals</title>
+  <title>ChurchCRM</title>
+  <meta http-equiv="refresh" content="0; url=https://churchcrm.io/">
+  <link rel="canonical" href="https://churchcrm.io/">
+  <meta name="robots" content="noindex">
   <style>
-    body { font: 16px/1.5 system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; color: #15191e; }
-    code { background: #eef1f4; padding: 0 .25rem; border-radius: 3px; }
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 36rem; margin: 3rem auto; padding: 0 1rem; color: #15191e; }
   </style>
 </head>
 <body>
-  <h1>ChurchCRM visuals</h1>
-  <p id="release">Screenshots and videos used by churchcrm.io and docs.churchcrm.io.</p>
-  <ul>
-    <li><a href="manifest.json">manifest.json</a>: every file, with title, locale and device</li>
-    <li><a href="release.json">release.json</a>: which release and capture these are</li>
-  </ul>
-  <p>A file's URL is this address plus its <code>relativePath</code> from the manifest.</p>
-  <script>
-    fetch('release.json').then(function (r) { return r.json(); }).then(function (d) {
-      document.getElementById('release').textContent =
-        'ChurchCRM ' + d.release + ': ' + d.entries + ' files in ' + d.locales.length + ' languages.';
-    }).catch(function () {});
-  </script>
+  <h1>ChurchCRM</h1>
+  <p>This address serves the screenshots and videos for <a href="https://churchcrm.io/">churchcrm.io</a> and <a href="https://docs.churchcrm.io/">docs.churchcrm.io</a>.</p>
+  <p><a href="https://churchcrm.io/">Go to churchcrm.io</a></p>
+  <script>location.replace('https://churchcrm.io/');</script>
 </body>
 </html>
