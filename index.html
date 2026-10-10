@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChurchCRM visuals</title>
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; color: #15191e; }
+    code { background: #eef1f4; padding: 0 .25rem; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <h1>ChurchCRM visuals</h1>
+  <p id="release">Screenshots and videos used by churchcrm.io and docs.churchcrm.io.</p>
+  <ul>
+    <li><a href="manifest.json">manifest.json</a>: every file, with title, locale and device</li>
+    <li><a href="release.json">release.json</a>: which release and capture these are</li>
+  </ul>
+  <p>A file's URL is this address plus its <code>relativePath</code> from the manifest.</p>
+  <script>
+    fetch('release.json').then(function (r) { return r.json(); }).then(function (d) {
+      document.getElementById('release').textContent =
+        'ChurchCRM ' + d.release + ': ' + d.entries + ' files in ' + d.locales.length + ' languages.';
+    }).catch(function () {});
+  </script>
+</body>
+</html>
