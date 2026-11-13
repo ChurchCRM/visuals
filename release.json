@@ -1,0 +1,24 @@
+{
+  "release": "7.8.4",
+  "runId": 43337989590,
+  "commit": "72c93e787aecbaf6772db5a76db99089c99595a2",
+  "publishedAt": "2026-11-13T04:07:25Z",
+  "entries": 1087,
+  "locales": [
+    "ar",
+    "de",
+    "en",
+    "es",
+    "fr",
+    "pt",
+    "ru",
+    "zh"
+  ],
+  "devices": [
+    "desktop",
+    "mobile",
+    "recordings",
+    "setup",
+    "tablet"
+  ]
+}
