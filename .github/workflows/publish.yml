@@ -1,0 +1,39 @@
+name: Publish visuals
+
+# Replaces the published screenshots and videos with one ChurchCRM/CRM capture run.
+# Run it after a release is published. It can be run again with the same run_id.
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'ChurchCRM/CRM "Marketing: capture assets" run to publish. Blank: the latest successful run on master.'
+        required: false
+        type: string
+      release:
+        description: 'ChurchCRM release these visuals show (x.y.z). Blank: the version in CRM package.json at the run commit.'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Publish the capture run
+        env:
+          # The CRM repo is public. If the default token cannot read its artifacts,
+          # add a read-only CRM_ARTIFACTS_TOKEN secret (Actions: read on ChurchCRM/CRM).
+          GH_TOKEN: ${{ secrets.CRM_ARTIFACTS_TOKEN || github.token }}
+          RUN_ID: ${{ inputs.run_id }}
+          RELEASE: ${{ inputs.release }}
+        run: ./scripts/publish.sh

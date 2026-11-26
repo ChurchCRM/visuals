@@ -1,0 +1,24 @@
+{
+  "release": "7.9.0",
+  "runId": 45882771489,
+  "commit": "c00bce1a5ced469b549a26be266e6442a57bdf3e",
+  "publishedAt": "2026-11-26T19:52:28Z",
+  "entries": 1057,
+  "locales": [
+    "ar",
+    "de",
+    "en",
+    "es",
+    "fr",
+    "pt",
+    "ru",
+    "zh"
+  ],
+  "devices": [
+    "desktop",
+    "mobile",
+    "recordings",
+    "setup",
+    "tablet"
+  ]
+}
